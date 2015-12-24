@@ -1,20 +1,23 @@
 (function () {
 	'use strict'
 
+	var config = {
+		apiUrl: '', //insert api base url here
+		hostname: ''
+	}
+
 	angular
 		.module('edu')
 		.constant('config', config)
-		.config(appConfig);
+		.config(interceptorConfig)
+		.config(appStart);
 
-	var config = {
-		apiUrl: '' //insert api base url here
-	}
-
-	appConfig.$inject = ['$httpProvider', '$provide'];
-	function appConfig ($httpProvider, $provide) {
+	interceptorConfig.$inject = ['$httpProvider', '$provide'];
+	function interceptorConfig ($httpProvider, $provide) {
+		console.log('interceptorConfig');
 		interceptor.$inject = ['$q', '$rootScope'];
 		function interceptor ($q, $rootScope) {
-			return = {
+			return {
 				'request': function (config) {
 					if(window.localStorage.getItem('authToken')){
 						config.headers.authToken = window.localStorage.getItem('authToken');
@@ -35,5 +38,19 @@
 
 		$provide.factory('httpInterceptor', interceptor);
 		$httpProvider.interceptors.push('httpInterceptor');
+	}
+
+	appStart.$inject = ['$injector'];
+	function appStart ($injector) {
+		console.log('appStart');
+		console.log(window.location.hostname.split('.')[0]);
+		var subdomain = window.location.hostname.split('.')[0];
+		if(subdomain == 'www'){
+			$injector.get('$state').go('main');
+		}
+		else{
+			config.hostname = subdomain;
+			$injector.get('$state').go('subdomain');
+		}
 	}
 })();

@@ -5,8 +5,8 @@
 		.module('edu')
 		.controller('settingsController', settingsController)
 
-	settingsController.$inject = [];
-	function settingsController () {
-		console.log('inside settings controller');
+	settingsController.$inject = ['config'];
+	function settingsController (config) {
+		console.log(config.hostname);
 	}
 })();
