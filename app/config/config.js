@@ -3,18 +3,17 @@
 
 	var config = {
 		apiUrl: '', //insert api base url here
-		hostname: ''
+		hostname: '' // this will be inserted from run module
 	}
 
 	angular
 		.module('edu')
 		.constant('config', config)
 		.config(interceptorConfig)
-		.config(appStart);
+		.run(appStart);
 
 	interceptorConfig.$inject = ['$httpProvider', '$provide'];
 	function interceptorConfig ($httpProvider, $provide) {
-		console.log('interceptorConfig');
 		interceptor.$inject = ['$q', '$rootScope'];
 		function interceptor ($q, $rootScope) {
 			return {
@@ -40,17 +39,21 @@
 		$httpProvider.interceptors.push('httpInterceptor');
 	}
 
-	appStart.$inject = ['$injector'];
-	function appStart ($injector) {
-		console.log('appStart');
-		console.log(window.location.hostname.split('.')[0]);
+	appStart.$inject = ['$state'];
+	function appStart ($state) {
 		var subdomain = window.location.hostname.split('.')[0];
 		if(subdomain == 'www'){
-			$injector.get('$state').go('main');
+			if(window.location.href.indexOf('/#/') == -1){
+				$state.go('main');
+			}
 		}
 		else{
-			config.hostname = subdomain;
-			$injector.get('$state').go('subdomain');
+			if(!config.hostname){
+				config.hostname = subdomain;
+				if(window.location.href.indexOf('/#/') == -1){
+					$state.go('subdomain');
+				}
+			}
 		}
 	}
 })();

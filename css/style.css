@@ -11,7 +11,10 @@ body {
   outline: none; }
 
 .row > [class*="col-"] {
-  margin-bottom: 25px; }
+  /*  edited by Aziz to 10px
+   *  original value 25px
+   */
+  margin-bottom: 10px; }
 
 .row.no-margin-bottom > [class*="col-"] {
   margin-bottom: 10px; }
@@ -1007,7 +1010,7 @@ body.login-page {
     padding-top: 50px;
     padding-bottom: 20px; }
   .landing-page .app-content-b.feature-1 {
-    background-image: url("../img/thumbnails/original/picjumbo.com_HNCK3558.jpg");
+    background-image: url("../img/thumbnails/picjumbo.com_IMG_3241.jpg");
     background-repeat: no-repeat;
     -webkit-background-size: cover;
     -moz-background-size: cover;
