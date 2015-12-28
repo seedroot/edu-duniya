@@ -20,5 +20,23 @@
 				controller: 'settingsController',
 				controllerAs: 'vm'
 			})
+			.state('general-setting', {
+				url: '/setting/general',
+				templateUrl: 'app/settings/general-setting.html',
+				controller: 'generalsettingController',
+				controllerAs: 'vm'
+			})
+			.state('course-class', {
+				url: '/setting/course',
+				templateUrl: 'app/settings/course-class.html',
+				controller: 'courseclassController',
+				controllerAs: 'vm'
+			})
+			.state('batch-group', {
+				url: '/setting/group',
+				templateUrl: 'app/settings/batch-group.html',
+				controller: 'batchgroupController',
+				controllerAs: 'vm'
+			})
 	}
 })();
