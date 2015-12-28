@@ -1,0 +1,62 @@
+﻿<div class="page-title">
+    <span class="title">Manage Course/Class</span>
+    <div class="description"></div>
+</div>
+<div>
+    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+        <div class="panel fresh-color panel-primary">
+            <div class="panel-body">
+
+                <div class="panel fresh-color panel-default">
+                    <div class="panel-body">
+                        <div class="row">
+                            <div class="col-lg-12 col-md-12">
+                                <blockquote>Add New Course/Class</blockquote>
+                                <div class="fresh-color panel-primary">
+                                    <div class="row">
+                                        <div class="col-lg-4 col-md-4">
+                                            <div>
+                                                <input type="text" name="class_name" id="class_name" class="form-control " placeholder="Course/Class Name">
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-4 col-md-4">
+                                            <div>
+                                                <input type="text" name="class_code" id="class_code" class="form-control " placeholder="Course/Class Code">
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-4 col-md-4">
+                                            <div>
+                                                <input type="button" value="Add Course/Class" class="btn btn-success">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                          <div class="col-lg-12 col-md-12 table-responsive">
+                                            <table class="table table-hover">
+                                                <thead>
+                                                    <tr>
+                                                        <th>Course/Class Code</th>
+                                                        <th>Course/Class Name</th>
+                                                        <th>Action</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr ng-repeat="val in vm.course">
+                                                        <td>{{ val.coursecode }}</td>
+                                                        <td>{{ val.coursename }}</td>
+                                                        <td><input type="button" value="Edit" class="btn btn-default btn-circle" /> | <input type="button" value="Delete" class="btn btn-default btn-circle" /></td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
