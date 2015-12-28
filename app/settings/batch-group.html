@@ -1,0 +1,94 @@
+<div class="page-title">
+    <span class="title">Manage Batch/Group</span>
+    <div class="description"></div>
+</div>
+<div>
+    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+        <div class="panel fresh-color panel-primary">
+            <div class="panel-body">
+
+                <div class="panel fresh-color panel-default">
+                    <div class="panel-body">
+                        <div class="row">
+                            <div class="col-lg-12 col-md-12">
+                                 <blockquote>Batch / Group Detail</blockquote>
+                                <div class="fresh-color panel-primary">
+                                    <div class="row">
+                                        <div class="col-lg-6 col-md-6">
+                                            <div>
+                                            Academic Year :
+                                                <select></select>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6 col-md-6">
+                                            <div>
+                                            Course / Class :
+                                                 <select></select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-lg-6 col-md-6">
+                                            <div>
+                                             <input type="text" name="groupname" id="groupname" class="form-control " placeholder="Batch/group Name">
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6 col-md-6">
+                                            <div>
+                                                <input type="button" value="Add Course/Class" class="btn btn-success">
+                                            </div>
+                                        </div>
+                                    </div> 
+                                    <div class="row"> 
+                                        <div class="col-lg-6 col-md-6">
+                                             <div class="radio3 radio-check radio-inline">
+                                                <input type="radio" id="radioSubjects" name="radioSubjects" value="">
+                                                <label for="radioAll">
+                                                    Import previous year group subjects
+                                                </label>
+                                             </div>
+                                        </div>
+                                         <div class="col-lg-6 col-md-6">
+                                            <div class="radio3 radio-check radio-inline">
+                                                <input type="radio" id="radioFees" name="radioFees" value="" checked="">
+                                                <label for="radioAll">
+                                                    Import previous year group master fees
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>  
+                                    <div class="row"> 
+                                         <div class="col-lg-12 col-md-12">
+                                         <div class="fresh-color panel-primary">
+                                            <div class="panel-body table-responsive">
+                                                <table class="table table-hover">
+                                                <thead>
+                                                    <tr>
+                                                        <th>Course/Class Name</th>
+                                                        <th>Batch/Group Name</th>
+                                                        <th>Action</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr ng-repeat="val in vm.groups">
+                                                        <td>{{ val.coursename }}</td>
+                                                        <td>{{ val.groupname }}</td>
+                                                        <td><input type="button" value="Edit" class="btn btn-default btn-circle" /> | <input type="button" value="Delete" class="btn btn-default btn-circle" /></td>
+                                                    </tr>
+                                                </tbody>
+                                                </table>
+                                            </div> 
+                                         </div> 
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
