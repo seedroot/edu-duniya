@@ -3,10 +3,10 @@
 
 	angular
 		.module('edu')
-		.controller('subDomainController', subDomainController)
+		.controller('SubdomainController', SubdomainController)
 
-	subDomainController.$inject = ['config'];
-	function subDomainController (config) {
+	SubdomainController.$inject = ['config'];
+	function SubdomainController (config) {
 		var vm = this;
 
 		vm.client = config.hostname;

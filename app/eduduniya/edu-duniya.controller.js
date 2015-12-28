@@ -3,10 +3,10 @@
 
 	angular
 		.module('edu')
-		.controller('eduDuniyaController', eduDuniyaController);
+		.controller('EduDuniyaController', EduDuniyaController);
 
-	eduDuniyaController.$inject = [];
-	function eduDuniyaController (){
+	EduDuniyaController.$inject = [];
+	function EduDuniyaController (){
 		console.log('eduDuniyaController');
 	}
 })();

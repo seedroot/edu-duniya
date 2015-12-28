@@ -3,10 +3,10 @@
 
 	angular
 		.module('edu')
-		.controller('loginController', loginController)
+		.controller('LoginController', LoginController)
 
-	loginController.$inject = [];
-	function loginController () {
+	LoginController.$inject = [];
+	function LoginController () {
 		console.log('in login controller');
 	}
 })();

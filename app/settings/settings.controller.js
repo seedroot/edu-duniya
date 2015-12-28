@@ -3,10 +3,10 @@
 
 	angular
 		.module('edu')
-		.controller('settingsController', settingsController)
+		.controller('SettingsController', SettingsController)
 
-	settingsController.$inject = ['config'];
-	function settingsController (config) {
+	SettingsController.$inject = ['config'];
+	function SettingsController (config) {
 		//console.log(config.hostname);
 		$(".live-tile, .flip-list").not(".exclude").liveTile();
 	}

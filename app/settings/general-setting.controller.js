@@ -3,10 +3,10 @@
 
 	angular
 		.module('edu')
-		.controller('generalsettingController',generalsettingController)
+		.controller('GeneralSettingController',GeneralSettingController)
 
-		generalsettingController.$inject = [];
-		function generalsettingController () {
+		GeneralSettingController.$inject = [];
+		function GeneralSettingController () {
 			var vm = this;
 
 

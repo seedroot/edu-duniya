@@ -3,10 +3,10 @@
 
     angular
         .module('edu')
-        .controller('courseclassController', courseclassController)
+        .controller('CourseClassController', CourseClassController)
 
-        courseclassController.$inject=[];
-        function courseclassController() {
+        CourseClassController.$inject=[];
+        function CourseClassController() {
         	var vm = this;
 
         	vm.course = [{

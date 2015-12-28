@@ -3,10 +3,10 @@
 
 	angular
 		.module('edu')
-		.controller('admissionController', admissionController);
+		.controller('AdmissionController', AdmissionController);
 
-	admissionController.$inject = [];
-	function admissionController () {
+	AdmissionController.$inject = [];
+	function AdmissionController () {
 		// body...
 	}
 })();
