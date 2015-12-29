@@ -38,6 +38,16 @@
 					}
 				}
 			})
+			.state('register', {
+				url: '/register',
+				views: {
+					"main": {
+						templateUrl: 'app/authentication/register.html',
+						controller: 'RegisterController',
+						controllerAs: 'vm'
+					}
+				}
+			})
 			.state('settings', {
 				url: '/settings',
 				views: {
