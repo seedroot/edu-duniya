@@ -98,12 +98,12 @@
 					}
 				}
 			})
-			.state('general-setting', {
-				url: '/setting/general',
+			.state('general', {
+				url: '/settings/general',
 				views: {
 					"main": {
-						templateUrl: 'app/settings/general-setting.html',
-						controller: 'generalSettingController',
+						templateUrl: 'app/settings/general.html',
+						controller: 'GeneralSettingController',
 						controllerAs: 'vm'
 					},
 					"header": {
@@ -123,12 +123,12 @@
 					}
 				}
 			})
-			.state('course-class', {
-				url: '/setting/course',
+			.state('course', {
+				url: '/settings/course',
 				views: {
 					"main": {
-						templateUrl: 'app/settings/course-class.html',
-						controller: 'CourseClassController',
+						templateUrl: 'app/settings/course.html',
+						controller: 'CourseController',
 						controllerAs: 'vm'
 					},
 					"header": {
@@ -148,12 +148,37 @@
 					}
 				}
 			})
-			.state('batch-group', {
-				url: '/setting/group',
+			.state('batch', {
+				url: '/settings/batch',
 				views: {
 					"main": {
-						templateUrl: 'app/settings/batch-group.html',
-						controller: 'BatchGroupController',
+						templateUrl: 'app/settings/batch.html',
+						controller: 'BatchController',
+						controllerAs: 'vm'
+					},
+					"header": {
+						templateUrl: 'app/layouts/header.html',
+						controller: 'headerController',
+						controllerAs: 'vm'
+					},
+					"menu": {
+						templateUrl: 'app/layouts/side-menu.html',
+						controller: 'menuController',
+						controllerAs: 'vm'
+					},
+					"footer": {
+						templateUrl: 'app/layouts/footer.html',
+						controller: 'footerController',
+						controllerAs: 'vm'
+					}
+				}
+			})
+			.state('subjects', {
+				url: '/settings/subjects',
+				views: {
+					"main": {
+						templateUrl: 'app/settings/subjects.html',
+						controller: 'subjectsController',
 						controllerAs: 'vm'
 					},
 					"header": {

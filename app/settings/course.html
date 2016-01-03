@@ -1,0 +1,88 @@
+﻿<div class="container-fluid">
+    <div class="side-body">
+    <div class="row">
+        <div class="col-xs-12 hidden-lg hidden-md">
+            <ol class="breadcrumb">
+                <li><a ui-sref="settings">Settings</a></li>
+                <li class="active">Course</li>
+            </ol>           
+        </div>
+    </div>
+        <ol class="breadcrumb pull-right hidden-xs hidden-sm">
+            <li><a ui-sref="settings">Settings</a></li>
+            <li class="active">Course</li>
+        </ol>
+        <div class="page-title">
+            <span class="title">Course Control Panel</span>
+            <div class="description">add/remove/edit courses</div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-lg-offset-3 col-lg-6">
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-title">
+                            <div class="title">Manage Courses</div>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <form onsubmit="">
+                            <div class="row">
+                                <div class="col-lg-6">
+                                    <div class="form-group">
+                                        <label for="course_name">Course Name</label>
+                                        <input type="text" class="form-control" id="course_name">
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="form-group">
+                                        <label for="course_code">Course Code</label>
+                                        <input type="text" class="form-control" id="course_code">
+                                    </div>
+                                </div>
+                            </div>
+                            <input type="submit" value="Add Course" class="btn btn-primary pull-right">
+                        </form>
+                        <hr style="margin-top:50px" />
+                        <div class="row">
+                            <div class="col-xs-12">
+                                <div class="table-responsive">
+                                    <table class="table table-hover">
+                                        <thead>
+                                            <tr>
+                                                <th>Course Code</th>
+                                                <th>Course Name</th>
+                                                <th></th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>CSR101</td>
+                                                <td>B. Sc. I.T</td>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <td>CSR102</td>
+                                                <td>B. Sc. C.S</td>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <td>CSR103</td>
+                                                <td>B. Sc. PHY</td>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <td>CSR104</td>
+                                                <td>B. Sc. CHEM</td>
+                                                <td></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
