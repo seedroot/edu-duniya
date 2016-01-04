@@ -2,6 +2,7 @@
   "name": "edu-duniya",
   "dependencies": {
     "angular": "~1.4.8",
+    "angular-notify": "~2.5.0",
     "angular-ui-router": "~0.2.15",
     "animate.css": "latest",
     "bootstrap": "latest",

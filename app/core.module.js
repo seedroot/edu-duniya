@@ -2,7 +2,7 @@
 	'use strict'
 
 	angular
-		.module('edu', ['ui.router'])
+		.module('edu', ['ui.router', 'cgNotify'])
 		.config(appConfig)
 
 	appConfig.$inject = ['$stateProvider', '$urlRouterProvider'];
