@@ -1,89 +1,73 @@
-                    <div class="page-title">
-                        <span class="title">Institute Approval</span>
-                        <div class="description"></div>
+<div class="container-fluid">
+    <div class="side-body">
+    <div class="row">
+        <div class="col-xs-12 hidden-lg hidden-md">
+            <ol class="breadcrumb">
+                <li>Home</li>
+                <li class="active">Approval</li>
+            </ol>           
+        </div>
+    </div>
+        <ol class="breadcrumb pull-right hidden-xs hidden-sm">
+            <li>Home</li>
+            <li class="active">Approval</li>
+        </ol>
+        <div class="page-title">
+            <span class="title">Institute List</span>
+            <div class="description">All registered institutes can be viewed here</div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-lg-offset-3 col-lg-6">
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-title">
+                            <div class="title">All Institute</div>
+                        </div>
                     </div>
-                    <div>
-                        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                            <div class="panel fresh-color panel-primary">
-                                <!--<div class="panel-heading">
-                                    <h3 class="panel-title">Institute Approval Form</h3>
-                                </div>-->
-                                <div class="panel-body">
-
-                                    <div class="panel fresh-color panel-default">
-                                        <div class="panel-body">
-                                             <blockquote>
-                                        <p>Select View Criteria</p>
-                                    </blockquote>
-
-                                     <div class="row">
-                                        <div class="col-lg-12">
-                                    <div class="radio3 radio-check radio-inline">
-                                        <input type="radio" id="radioAll" name="radioApproval" value=" All Institute" checked="">
-                                        <label for="radioAll">
-                                            All Institute
-                                        </label>
+                    <div class="card-body">
+                        <form>
+                            <div class="row">
+                                <div class="col-lg-6">
+                                    <div class="form-group">
+                                        <label for="exampleInputEmail1">Academic Year</label>
+                                        <input type="email" class="form-control" id="exampleInputEmail1">
                                     </div>
-                                    <div class="radio3 radio-check radio-inline">
-                                        <input type="radio" id="radioApproved" name="radioApproval" value="Approved">
-                                        <label for="radioApproved">
-                                            Approved
-                                        </label>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="form-group">
+                                        <label for="exampleInputEmail1">Select Course</label>
+                                        <input type="email" class="form-control" id="exampleInputEmail1">
                                     </div>
-                                    <div class="radio3 radio-check radio-inline">
-                                        <input type="radio" id="radioDisApproved" name="radioApproval" value="Non-Approved">
-                                        <label for="radioDisApproved">
-                                           Non-Approved
-                                        </label>
-                                    </div>
-                                   </div>
-                                         </div>
-                                        </div>
-                                    </div>
-                                   
-
-                                    <div class="row">
-                                        <div class="col-lg-12 table-responsive">
-                                             <table class="table table-hover table-bordered ">
+                                </div>
+                            </div>
+                            <input type="submit" value="Add Batch" class="btn btn-primary pull-right">
+                        </form>
+                        <hr style="margin-top:50px" />
+                        <div class="row">
+                            <div class="col-xs-12">
+                                <div class="table-responsive">
+                                    <table class="table table-hover">
                                         <thead>
                                             <tr>
-                                                <td>Name of Institute</td>
-                                                <td>Email ID</td>
-                                                <td>View Institute Details</td>
-                                                <td>View Documents</td>
-                                                <td>Approve / Dis-Approve</td>
+                                                <th>Institute Name</th>
+                                                <th>Email ID</th>
+                                                <th></th>
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            <tr>
-                                                <td>VIVA College</td>
-                                                <td>viva@vivacollege.org</td>
-                                                <td></td>
-                                                <td></td>
+                                            <tr ng-repeat="inst in vm.institutes">
+                                                <td>{{ inst.institute_name }}</td>
+                                                <td>{{ inst.email }}</td>
                                                 <td></td>
                                             </tr>
                                         </tbody>
                                     </table>
-                                        </div>
-                                    </div>
-                                   
-
-                                    <!-- <div class="row">
-                                        <div class="col-lg-3 col-md-6 col-lg-6">
-                                            <div class="form-group">
-                                                <input type="submit" value="Save" class="btn btn-success btn-block btn-lg">
-                                            </div>
-                                        </div>
-                                        <div class=" col-lg-3 col-md-6 col-lg-6">
-                                            <div class="form-group">
-                                                <input type="button" value="Clear" class="btn btn-success btn-block btn-lg">
-                                            </div>
-                                        </div>
-                                    </div> -->
-
-
-
                                 </div>
                             </div>
                         </div>
                     </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

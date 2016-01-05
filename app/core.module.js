@@ -5,6 +5,11 @@
 		.module('edu', ['ui.router', 'cgNotify'])
 		.config(appConfig)
 
+	getInstitutes.$inject = ['adminService'];
+	function getInstitutes (adminService) {
+		return adminService.getInstitutes();
+	}
+
 	appConfig.$inject = ['$stateProvider', '$urlRouterProvider'];
 	function appConfig ($stateProvider, $urlRouterProvider) {
 		$stateProvider
@@ -46,6 +51,34 @@
 						controller: 'RegisterController',
 						controllerAs: 'vm'
 					}
+				}
+			})
+			.state('approval', {
+				url: '/approval',
+				views: {
+					"main": {
+						templateUrl: 'app/admin/approval.html',
+						controller: 'ApprovalController',
+						controllerAs: 'vm'
+					},
+					"header": {
+						templateUrl: 'app/layouts/header.html',
+						controller: 'headerController',
+						controllerAs: 'vm'
+					},
+					"menu": {
+						templateUrl: 'app/layouts/side-menu.html',
+						controller: 'menuController',
+						controllerAs: 'vm'
+					},
+					"footer": {
+						templateUrl: 'app/layouts/footer.html',
+						controller: 'footerController',
+						controllerAs: 'vm'
+					}
+				},
+				resolve: {
+					institutes: getInstitutes
 				}
 			})
 			.state('settings', {

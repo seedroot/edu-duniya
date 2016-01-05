@@ -10,7 +10,7 @@
 		this.register = function (_data) {
 			var deferred = $q.defer();
 
-			$http.post(config.apiUrl + '/institute', _data)
+			$http.post(config.apiUrl + '/institute',  {institute: _data})
 				.success(function (data) {
 					deferred.resolve(data);
 				})

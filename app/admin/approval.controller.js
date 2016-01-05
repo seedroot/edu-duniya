@@ -3,10 +3,12 @@
 
 	angular
 		.module('edu')
-		.controller('approvalController', approvalController);
+		.controller('ApprovalController', ApprovalController);
 
-	approvalController.$inject = [];
-	function approvalController () {
+	ApprovalController.$inject = ['institutes'];
+	function ApprovalController (institutes) {
 		var vm = this;
+
+		vm.institutes = institutes;
 	}
 })();
