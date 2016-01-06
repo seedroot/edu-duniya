@@ -24,7 +24,7 @@
 		this.setStatus = function (id, status) {
 			var deferred = $q.defer();
 
-			$http.put(config.apiUrl + '/institute' + id, status)
+			$http.put(config.apiUrl + '/institute/' + id, status)
 				.success(function (data) {
 					deferred.resolve(data);
 				})

@@ -25,24 +25,6 @@
                         </div>
                     </div>
                     <div class="card-body">
-                        <form>
-                            <div class="row">
-                                <div class="col-lg-6">
-                                    <div class="form-group">
-                                        <label for="exampleInputEmail1">Academic Year</label>
-                                        <input type="email" class="form-control" id="exampleInputEmail1">
-                                    </div>
-                                </div>
-                                <div class="col-lg-6">
-                                    <div class="form-group">
-                                        <label for="exampleInputEmail1">Select Course</label>
-                                        <input type="email" class="form-control" id="exampleInputEmail1">
-                                    </div>
-                                </div>
-                            </div>
-                            <input type="submit" value="Add Batch" class="btn btn-primary pull-right">
-                        </form>
-                        <hr style="margin-top:50px" />
                         <div class="row">
                             <div class="col-xs-12">
                                 <div class="table-responsive">
@@ -51,14 +33,16 @@
                                             <tr>
                                                 <th>Institute Name</th>
                                                 <th>Email ID</th>
-                                                <th></th>
+                                                <th>Status</th>
                                             </tr>
                                         </thead>
                                         <tbody>
                                             <tr ng-repeat="inst in vm.institutes">
                                                 <td>{{ inst.institute_name }}</td>
                                                 <td>{{ inst.email }}</td>
-                                                <td></td>
+                                                <td>
+                                                    <input type="checkbox" class="input-checkbox" value="" ng-model="inst.is_approved" ng-click="vm.setStatus($index)">
+                                                </td>
                                             </tr>
                                         </tbody>
                                     </table>
