@@ -5,8 +5,8 @@
 		.module('edu')
 		.controller('LoginController', LoginController)
 
-	LoginController.$inject = ['authService', '$state'];
-	function LoginController (authService, $state) {
+	LoginController.$inject = ['authService', '$state', 'common'];
+	function LoginController (authService, $state, common) {
 		var vm = this;
 		vm.login = login;
 
@@ -17,9 +17,11 @@
 			};
 			authService.login(object)
 				.then(function (data) {
-					console.log(data);
-					if(data != 'incorrect username or password'){
-						$state.go('settings');
+					if(typeof data != 'string'){
+						$state.go('settings', {id: data.user.institute_id});
+					}
+					else{
+						common.error(data);
 					}
 				})
 				.catch(function (err) {

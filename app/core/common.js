@@ -3,12 +3,32 @@
 
 	angular
 		.module('edu')
-		.run(init)
+		.factory('common', common)
 
-	init.$inject = ['notify'];
-	function init (notify) {
-		notify.config({
-			
-		});
+	common.$inject = ['notify'];
+	function common (notify) {
+
+		var service = {
+			success: success,
+			error: error
+		};
+
+		return service;
+
+		function success (text) {
+			notify({
+				message: text,
+				duration: 3000,
+				classes: 'success'
+			});
+		}
+
+		function error (text) {
+			notify({
+				message: text,
+				duration: 3000,
+				classes: 'danger'
+			});
+		}
 	}
 })();

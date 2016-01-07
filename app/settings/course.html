@@ -25,18 +25,18 @@
                         </div>
                     </div>
                     <div class="card-body">
-                        <form onsubmit="">
+                        <form ng-submit="vm.addCourse()">
                             <div class="row">
                                 <div class="col-lg-6">
                                     <div class="form-group">
                                         <label for="course_name">Course Name</label>
-                                        <input type="text" class="form-control" id="course_name">
+                                        <input type="text" class="form-control" id="course_name" ng-model="vm.course_name">
                                     </div>
                                 </div>
                                 <div class="col-lg-6">
                                     <div class="form-group">
                                         <label for="course_code">Course Code</label>
-                                        <input type="text" class="form-control" id="course_code">
+                                        <input type="text" class="form-control" id="course_code" ng-model="vm.course_code">
                                     </div>
                                 </div>
                             </div>
@@ -55,24 +55,9 @@
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            <tr>
-                                                <td>CSR101</td>
-                                                <td>B. Sc. I.T</td>
-                                                <td></td>
-                                            </tr>
-                                            <tr>
-                                                <td>CSR102</td>
-                                                <td>B. Sc. C.S</td>
-                                                <td></td>
-                                            </tr>
-                                            <tr>
-                                                <td>CSR103</td>
-                                                <td>B. Sc. PHY</td>
-                                                <td></td>
-                                            </tr>
-                                            <tr>
-                                                <td>CSR104</td>
-                                                <td>B. Sc. CHEM</td>
+                                            <tr ng-repeat="course in vm.courses">
+                                                <td>{{ course.course_code }}</td>
+                                                <td>{{ course.course_name }}</td>
                                                 <td></td>
                                             </tr>
                                         </tbody>

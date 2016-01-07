@@ -10,6 +10,11 @@
 		return adminService.getInstitutes();
 	}
 
+	getCourses.$inject = ['settingsService', '$stateParams'];
+	function getCourses (settingsService, $stateParams) {
+		return settingsService.getCourses($stateParams.id);
+	}
+
 	appConfig.$inject = ['$stateProvider', '$urlRouterProvider'];
 	function appConfig ($stateProvider, $urlRouterProvider) {
 		$stateProvider
@@ -82,7 +87,7 @@
 				}
 			})
 			.state('settings', {
-				url: '/settings',
+				url: '/settings/:id',
 				views: {
 					"main": {
 						templateUrl: 'app/settings/settings.html',
@@ -107,7 +112,7 @@
 				}
 			})
 			.state('admission', {
-				url: '/settings/admission',
+				url: '/settings/:id/admission',
 				views: {
 					"main": {
 						templateUrl: 'app/settings/admission.html',
@@ -132,7 +137,7 @@
 				}
 			})
 			.state('general', {
-				url: '/settings/general',
+				url: '/settings/:id/general',
 				views: {
 					"main": {
 						templateUrl: 'app/settings/general.html',
@@ -157,7 +162,7 @@
 				}
 			})
 			.state('course', {
-				url: '/settings/course',
+				url: '/settings/:id/course',
 				views: {
 					"main": {
 						templateUrl: 'app/settings/course.html',
@@ -179,10 +184,13 @@
 						controller: 'footerController',
 						controllerAs: 'vm'
 					}
+				},
+				resolve: {
+					courses: getCourses
 				}
 			})
 			.state('batch', {
-				url: '/settings/batch',
+				url: '/settings/:id/batch',
 				views: {
 					"main": {
 						templateUrl: 'app/settings/batch.html',
@@ -207,11 +215,11 @@
 				}
 			})
 			.state('subjects', {
-				url: '/settings/subjects',
+				url: '/settings/:id/subjects',
 				views: {
 					"main": {
 						templateUrl: 'app/settings/subjects.html',
-						controller: 'subjectsController',
+						controller: 'SubjectsController',
 						controllerAs: 'vm'
 					},
 					"header": {

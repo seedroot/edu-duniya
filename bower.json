@@ -13,6 +13,7 @@
     "iCheck": "latest",
     "jquery": "latest",
     "matchHeight": "latest",
+    "noty": "~2.3.7",
     "select2": "latest"
   },
   "private": true,

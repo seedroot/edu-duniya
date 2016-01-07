@@ -39,8 +39,8 @@
 		$httpProvider.interceptors.push('httpInterceptor');
 	}
 
-	appStart.$inject = ['$state'];
-	function appStart ($state) {
+	appStart.$inject = ['$state', 'notify'];
+	function appStart ($state, notify) {
 		var subdomain = window.location.hostname.split('.')[0];
 		if(subdomain == 'www'){
 			if(window.location.href.indexOf('/#/') == -1){
@@ -55,5 +55,10 @@
 				}
 			}
 		}
+
+		notify.config({
+			startTop:60,
+			position: 'right'
+		});
 	}
 })();
