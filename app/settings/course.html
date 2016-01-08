@@ -25,7 +25,8 @@
                         </div>
                     </div>
                     <div class="card-body">
-                        <form ng-submit="vm.addCourse()">
+                        <!-- <form ng-submit="vm.addCourse()"> -->
+                        <form>
                             <div class="row">
                                 <div class="col-lg-6">
                                     <div class="form-group">
@@ -55,9 +56,29 @@
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            <tr ng-repeat="course in vm.courses">
+                                            <!-- <tr ng-repeat="course in vm.courses">
                                                 <td>{{ course.course_code }}</td>
                                                 <td>{{ course.course_name }}</td>
+                                                <td></td>
+                                            </tr> -->
+                                            <tr>
+                                                <td>CRS001</td>
+                                                <td>B. Sc. I.T</td>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <td>CRS002</td>
+                                                <td>B. Sc. C.S</td>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <td>CRS003</td>
+                                                <td>B. Sc. CHEM</td>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <td>CRS004</td>
+                                                <td>B. Sc. PHY</td>
                                                 <td></td>
                                             </tr>
                                         </tbody>
