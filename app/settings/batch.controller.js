@@ -3,10 +3,10 @@
 
 	angular
 		.module('edu')
-		.controller('batchgroupController',batchgroupController)
+		.controller('BatchController',BatchController)
 
-		batchgroupController.$inject = [];
-		function batchgroupController () {
+		BatchController.$inject = [];
+		function BatchController () {
 			var vm = this;
 			vm.groups = [{
 				coursename: 'Grade1 English',

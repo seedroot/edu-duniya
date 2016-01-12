@@ -7,7 +7,7 @@ var templateCache = require('gulp-angular-templatecache');
 var nodemon = require('gulp-nodemon');
 var inject = require('gulp-inject');
 
-var port = process.env.PORT = process.env.PORT || 5000;
+var port = process.env.PORT = process.env.PORT || 80;
 
 gulp.task('js', function () {
   return gulp.src(['./js/app.js', 'views/*.js'])
