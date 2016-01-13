@@ -30,13 +30,17 @@
                                 <div class="col-lg-6">
                                     <div class="form-group">
                                         <label for="exampleInputEmail1">Academic Year</label>
-                                        <input type="email" class="form-control" id="exampleInputEmail1">
+                                        <select ng-model="vm.aca_year">
+                                            <option ng-repeat="year in vm.aca_year">{{ course.name }}</option>
+                                        </select>
                                     </div>
                                 </div>
                                 <div class="col-lg-6">
                                     <div class="form-group">
                                         <label for="exampleInputEmail1">Select Course</label>
-                                        <input type="email" class="form-control" id="exampleInputEmail1">
+                                        <select ng-model="vm.course">
+                                            <option ng-repeat="course in vm.courses">{{ course.name }}</option>
+                                        </select>
                                     </div>
                                 </div>
                             </div>

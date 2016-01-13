@@ -26,7 +26,7 @@
 
 			$http.get(config.apiUrl + '/settings/' + id + '/general/course')
 				.success(function (data) {
-					deferred.resolve(data);
+					deferred.resolve(data[0].course);
 				})
 				.error(function (err) {
 					deferred.reject(err);
