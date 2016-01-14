@@ -1,0 +1,398 @@
+ <div class="container-fluid">
+        <div class="side-body">
+         
+            <div class="page-title">
+                <span class="title">Admission Control Panel</span>
+                <div class="description">Enter Employee detail</div>
+            </div>
+            <div class="row">
+                <div class="col-xs-12 col-lg-offset-1 col-lg-10">
+                    <div class="card">
+                        <div class="card-header">
+                            <div class="card-title">
+                                <div class="title">Employee Detail</div>
+                            </div>
+                        </div>
+                        <div class="panel panel-default">
+                        <div class="panel-body">
+                        <div class="step">
+                            <ul class="nav nav-tabs" role="tablist">
+                                <li role="step" class="active">
+                                    <a href="#stepv1" id="step1-vtab" role="tab" data-toggle="tab" aria-controls="home" aria-expanded="true">
+                                        <div class="icon fa fa-user"></div>
+                                        <div class="step-title">
+                                            <div class="title">Personal</div>
+                                            <!--<div class="description">Enter Personal details</div>-->
+                                        </div>
+                                    </a>
+                                </li>
+                                <li role="step" class="">
+                                    <a href="#stepv2" role="tab" id="step2-vtab" data-toggle="tab" aria-controls="profile" aria-expanded="false">
+                                        <div class="icon fa fa-check-circle-o"></div>
+                                        <div class="step-title">
+                                            <div class="title">General</div>
+                                            <!--<div class="description">Enter Other details</div>-->
+                                        </div>
+                                    </a>
+                                </li>
+                                <li role="step" class="">
+                                    <a href="#stepv3" role="tab" id="step3-vtab" data-toggle="tab" aria-controls="profile" aria-expanded="false">                                        
+                                        <div class="icon fa fa-graduation-cap"></div>
+                                        <div class="step-title">
+                                            <div class="title">Educational</div>
+                                            <!--<div class="description">Enter Other details</div>-->
+                                        </div>
+                                    </a>
+                                </li>
+                            </ul>
+                            <div class="tab-content">
+                               <!-- First Tab -->
+                                <div role="tabpanel" class="tab-pane fade active in" id="stepv1" aria-labelledby="home-tab">
+                                    <div class="row">
+                                        <div class="col-lg-12">
+                                            <h4 class="pull-left">Other detail</h4>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-lg-3 col-md-3">
+                                            <div class="form-group">
+                                                <label for="course_name">Department</label>
+                                                <input type="text" class="form-control" id="course_name" ng-model="vm.course_name">
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-3 col-md-3">
+                                            <div class="form-group">
+                                                <label for="course_code">Designation</label>
+                                                <input type="text" class="form-control" id="course_code" ng-model="vm.course_code">
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-3 col-md-3">
+                                            <div class="form-group">
+                                                <label for="course_code">Salary</label>
+                                                <input type="text" class="form-control" id="course_code" ng-model="vm.course_code">
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-3 col-md-3">
+                                            <div class="form-group">
+                                                <label for="course_code">Date of Joining</label>
+                                                <input type="text" class="form-control" id="course_code" ng-model="vm.course_code">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <hr />
+
+                                    <div class="row">
+                                        <div class="col-lg-12">
+                                            <h4 class="pull-left">Personal detail</h4>
+                                        </div>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="col-lg-8 col-md-8">
+                                             <div class="row">
+                                        <div class="col-lg-6 col-md-6">
+                                            <div class="form-group">
+                                                <label for="course_name">Surname Name</label>
+                                                <input type="text" class="form-control" id="Text1" ng-model="vm.course_name">
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6 col-md-6">
+                                            <div class="form-group">
+                                                <label for="course_code">First Name</label>
+                                                <input type="text" class="form-control" id="Text2" ng-model="vm.course_code">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-lg-6 col-md-6">
+                                            <div class="form-group">
+                                                <label for="course_name">Father's/Husband's Name</label>
+                                                <input type="text" class="form-control" id="Text3" ng-model="vm.course_name">
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6 col-md-6">
+                                            <div class="form-group">
+                                                <label for="course_code">Mother's Name</label>
+                                                <input type="text" class="form-control" id="Text4" ng-model="vm.course_code">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-lg-6 col-md-6">
+                                            <div class="form-group">
+                                                 <label for="course_code">Mobile No.</label>
+                                                <input type="text" class="form-control" id="Text9" ng-model="vm.course_code">
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6 col-md-6">
+                                            <div class="form-group">
+                                                 <div class="form-group">
+                                                        <label for="course_name">Email ID</label>
+                                                        <input type="text" class="form-control" id="Text16" ng-model="vm.course_name">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-lg-12 col-md-12">
+                                            <label for="course_code">Present Address</label>
+                                            <textarea class="form-control" id="Text5" rows="2"></textarea>
+                                        </div>
+                                    </div>
+                                        </div>
+                                        <div class="col-lg-4 col-md-4">
+                                              <div class="row">
+                                                <div class="col-lg-12">
+                                                    <center>
+                                                         <div class="caption">
+                                                             <h4>Employee's Photo</h4>
+                                                             </div>
+                                                             <div style="border:1px solid black; max-height: 300px; max-width: 253px">
+                                                        <img src="../../img/profile/profile-1.jpg" class="img-responsive" style="max-height: 300px; max-width: 250px" />
+                                                        </div>
+                                                        <div class="caption">
+                                                            <input type="file" class="" accept="image/*" style="margin-top: 15px">
+                                                        </div>
+                                                    </center>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                   
+                                      <div class="row" style="margin-top: 15px">
+                                        <div class="col-lg-2 col-md-2">
+                                            <div class="row">
+                                                <div class="col-lg-12">
+                                                    <label class="pull-left">Gender</label>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-lg-6 col-md-6">
+                                                    <input type="radio" name="gender" id="Text6" value="Male">
+                                                    Male                                            
+                                                </div>
+                                                <div class="col-lg-6 col-md-6">
+                                                    <input type="radio" name="gender" id="Radio1" value="Female">
+                                                    Female                                           
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-3 col-md-3">
+                                            <label for="course_code">Birth Place</label>
+                                            <input type="text" class="form-control" id="Text7" ng-model="vm.course_code" aria-multiline="true">
+                                        </div>
+                                        <div class="col-lg-3 col-md-3">
+                                            <label for="course_code">Date of Birth</label>
+                                            <input type="text" class="form-control" id="Text8" ng-model="vm.course_code" aria-multiline="true">
+                                        </div>
+                                        <div class="col-lg-3 col-md-3">
+                                           
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Second Tab -->
+                                <div role="tabpanel" class="tab-pane fade" id="stepv2" aria-labelledby="profile-tab">
+                                    <div class="row">
+                                        <div class="col-lg-12">
+                                            <h4 class="pull-left">General details</h4>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-lg-10 col-md-10">
+                                            <div class="row">
+                                                <div class="col-lg-4 col-md-4">
+                                                    <div class="form-group">
+                                                        <label for="course_name">Nationality</label>
+                                                        <input type="text" class="form-control" id="Text10" ng-model="vm.course_name">
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-4 col-md-4">
+                                                    <div class="form-group">
+                                                        <label for="course_code">Mother Tongue</label>
+                                                        <input type="text" class="form-control" id="Text11" ng-model="vm.course_code">
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-4 col-md-4">
+                                                    <div class="form-group">
+                                                        <label for="course_code">Domiciled In</label>
+                                                        <input type="text" class="form-control" id="Text15" ng-model="vm.course_code">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-lg-4 col-md-4">
+                                                    <div class="form-group">
+                                                        <label for="course_name">Category</label>
+                                                        <input type="text" class="form-control" id="Text12" ng-model="vm.course_name">
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-4 col-md-4">
+                                                    <div class="form-group">
+                                                        <label for="course_code">Caste</label>
+                                                        <input type="text" class="form-control" id="Text13" ng-model="vm.course_code">
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-4 col-md-4">
+                                                    <div class="form-group">
+                                                        <label for="course_code">Sub Caste</label>
+                                                        <input type="text" class="form-control" id="Text14" ng-model="vm.course_code">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <hr/>
+                                            <div class="row">
+                                                <div class="col-lg-4 col-md-4">
+                                                    <div class="form-group">
+                                                        <label for="course_name">Other Contact No.</label>
+                                                        <input type="text" class="form-control" id="Text16" ng-model="vm.course_name">
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-4 col-md-4">
+                                                   <div class="form-group">
+                                                        <label for="course_name">Blood Group</label>
+                                                        <input type="text" class="form-control" id="Text16" ng-model="vm.course_name">
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-4 col-md-4">
+                                                   <div class="form-group">
+                                                        <label for="course_name">Marital Status</label>
+                                                        <input type="text" class="form-control" id="Text16" ng-model="vm.course_name">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                    </div>
+                                    <hr />
+                                    <div class="row">
+                                        <div class="col-lg-12">
+                                            <h4 class="pull-left">Previous Employer details</h4>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-lg-10 col-md-10">
+                                             <div class="row">
+                                                 <div class="col-lg-12 col-md-12">
+                                            <div class="form-group">
+                                                <label for="course_name">Previous Employer's Name</label>
+                                                <input type="text" class="form-control" id="Text17" ng-model="vm.course_name">
+                                            </div>
+                                        </div>
+                                        </div>
+                                             <div class="row">
+                                        <div class="col-lg-4 col-md-4">
+                                            <div class="form-group">
+                                                <label for="course_name">Previous Employer's Domain</label>
+                                                <input type="text" class="form-control" id="Text18" ng-model="vm.course_name">
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-4 col-md-4">
+                                            <div class="form-group">
+                                                <label for="course_name">Previous Designation</label>
+                                                <input type="text" class="form-control" id="Text19" ng-model="vm.course_name">
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-4 col-md-4">
+                                            <div class="form-group">
+                                                <label for="course_name">Previous Salary</label>
+                                                <input type="text" class="form-control" id="Text20" ng-model="vm.course_name">
+                                            </div>
+                                        </div>
+                                    </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- 3rd Tab -->
+                                <div role="tabpanel" class="tab-pane fade" id="stepv3" aria-labelledby="profile-tab">
+                                     <div class="row">
+                                        <div class="col-lg-12">
+                                            <h4 class="pull-left">Educational details</h4>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-lg-10 col-md-10">
+                                            <div class="row">
+                                                <div class="col-lg-4 col-md-4">
+                                                    <div class="form-group">
+                                                        <label for="course_name">Institute name</label>
+                                                        <input type="text" class="form-control" id="Text10" ng-model="vm.course_name">
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-4 col-md-4">
+                                                    <div class="form-group">
+                                                        <label for="course_code">Institute Place</label>
+                                                        <input type="text" class="form-control" id="Text11" ng-model="vm.course_code">
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-4 col-md-4">
+                                                    <div class="form-group">
+                                                        <label for="course_code">Board/University</label>
+                                                        <input type="text" class="form-control" id="Text15" ng-model="vm.course_code">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-lg-4 col-md-4">
+                                                    <div class="form-group">
+                                                        <label for="course_name">Course name</label>
+                                                        <input type="text" class="form-control" id="Text12" ng-model="vm.course_name">
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-4 col-md-4">
+                                                    <div class="form-group">
+                                                        <label for="course_code">Course type</label>
+                                                        <input type="text" class="form-control" id="Text13" ng-model="vm.course_code">
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-4 col-md-4">
+                                                   
+                                                </div>
+                                            </div>
+                                            <hr/>
+                                            <div class="row">
+                                                <div class="col-lg-4 col-md-4">
+                                                    <div class="form-group">
+                                                        <label for="course_name">Percentage</label>
+                                                        <input type="text" class="form-control" id="Text16" ng-model="vm.course_name">
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-4 col-md-4">
+                                                   <div class="form-group">
+                                                        <label for="course_name">Grade Obtained</label>
+                                                        <input type="text" class="form-control" id="Text16" ng-model="vm.course_name">
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-4 col-md-4">
+                                                   <div class="form-group">
+                                                        <label for="course_name">Year & Month of Passing</label>
+                                                        <input type="text" class="form-control" id="Text16" ng-model="vm.course_name">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                    </div>
+
+                                    <div class="caption">
+                                        <div class="row">
+                                            <div class="col-lg-1 col-md-2">
+                                                <input type="button" value="Save" class="btn btn-primary form-control">
+                                            </div>
+                                            <div class="col-lg-1 col-md-2">
+                                                <input type="button" value="Clear" class="btn btn-primary form-control">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
