@@ -3,23 +3,14 @@
 
 	angular
 		.module('edu')
-		.controller('BatchController',BatchController)
+		.controller('BatchController', BatchController)
 
-		BatchController.$inject = [];
-		function BatchController () {
+		BatchController.$inject = ['courses'];
+		function BatchController (courses) {
 			var vm = this;
-			vm.groups = [{
-				coursename: 'Grade1 English',
-				groupname: 'Batch1'
-			},
-			{
-				coursename: 'Grade2 English',
-				groupname: 'batch2'
-			},
-			{
-				coursename: 'Grade3 English',
-				groupname: 'batch3'
-			}]
+			vm.aca_year = [];
+			console.log(courses);
+			vm.courses = courses;
 		}
 })
 ();

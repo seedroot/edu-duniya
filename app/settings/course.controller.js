@@ -9,7 +9,7 @@
         function CourseController (courses, $stateParams, settingsService, common) {
         	var vm = this;
 
-        	vm.courses = courses;
+        	vm.courses = courses || [];
         	vm.addCourse = addCourse;
 
         	function addCourse () {

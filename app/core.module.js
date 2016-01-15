@@ -262,6 +262,9 @@
 						controller: 'footerController',
 						controllerAs: 'vm'
 					}
+				},
+				resolve: {
+					courses: getCourses
 				}
 			})
 			.state('subjects', {
