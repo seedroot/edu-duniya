@@ -12,17 +12,17 @@
 
 			vm.arr = [{
 				sr_no: 1,
-				aca_year: '2014',
+				aca_year: '2014-2015',
 				is_current: false
 			},
 			{
 				sr_no: 2,
-				aca_year: '2015',
+				aca_year: '2015-2016',
 				is_current: false
 			},
 			{
 				sr_no: 3,
-				aca_year: '2016',
+				aca_year: '2016-2017',
 				is_current: true
 			}]
 
