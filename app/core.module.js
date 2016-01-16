@@ -58,6 +58,16 @@
 					}
 				}
 			})
+			.state('mapfinder', {
+				url: '/mapfinder',
+				views: {
+					"main": {
+						templateUrl: 'app/admin/mapfinder.html',
+						controller: 'MapFinderController',
+						controllerAs: 'vm'
+					}
+				}
+			})
 			.state('studentdetail', {
 				url: '/studentdetail',
 				views: {

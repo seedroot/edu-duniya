@@ -1,0 +1,24 @@
+<div class="container-fluid">
+
+<div class="row">
+    <div class="col-lg-7 col-md-7" id="map" style="border:1px solid red"> 
+
+    <div id="map"></div>
+    <div id="class" ng-repeat="marker in vm.markers | orderBy : 'title'">
+         <a href="#" ng-click="vm.openInfoWindow($event, marker)">{{marker.title}}</a>
+    </div>
+
+
+
+    </div>
+    <div class="col-lg-5 col-md-5" style="border:1px solid black"> 
+            <h1>Entry Form</h1>
+            <div class="row">
+                <input type="text" class="form-control" id="txt_one" placeholder="Fetch Data"/>
+                <input type="text" class="form-control" id="txt_two" placeholder="Send Data"/>
+                <button class="btn-primary" type="button" id="btn_fetch">Fetch</button>
+                <button class="btn-primary" type="button" id="btn_send">Send</button>
+            </div>
+    </div>
+</div>
+</div>
