@@ -2,7 +2,7 @@
 	'use strict'
 
 	angular
-		.module('edu', ['ui.router', 'cgNotify'])
+		.module('edu', ['ui.router', 'cgNotify', 'ngStorage', 'ui.bootstrap'])
 		.config(appConfig)
 
 	getInstitutes.$inject = ['adminService'];
@@ -13,6 +13,16 @@
 	getCourses.$inject = ['settingsService', '$stateParams'];
 	function getCourses (settingsService, $stateParams) {
 		return settingsService.getCourses($stateParams.id);
+	}
+
+	getBatches.$inject = ['settingsService', '$stateParams'];
+	function getBatches (settingsService, $stateParams) {
+		return settingsService.getBatches($stateParams.id);
+	}
+
+	getAdmissions.$inject = ['settingsService', '$stateParams'];
+	function getAdmissions (settingsService, $stateParams) {
+		return settingsService.getAdmissions($stateParams.id)
 	}
 
 	appConfig.$inject = ['$stateProvider', '$urlRouterProvider'];
@@ -134,6 +144,10 @@
 						controller: 'footerController',
 						controllerAs: 'vm'
 					}
+				},
+				resolve: {
+					courses: getCourses,
+					admissions: getAdmissions
 				}
 			})
 			.state('general', {
@@ -214,7 +228,8 @@
 					}
 				},
 				resolve: {
-					courses: getCourses
+					courses: getCourses,
+					batches: getBatches
 				}
 			})
 			.state('subjects', {
@@ -240,6 +255,9 @@
 						controller: 'footerController',
 						controllerAs: 'vm'
 					}
+				},
+				resolve: {
+					batches: getBatches
 				}
 			})
 	}

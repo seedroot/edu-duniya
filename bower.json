@@ -2,6 +2,7 @@
   "name": "edu-duniya",
   "dependencies": {
     "angular": "~1.4.8",
+    "angular-bootstrap": "~1.0.3",
     "angular-notify": "~2.5.0",
     "angular-ui-router": "~0.2.15",
     "animate.css": "latest",
@@ -13,6 +14,7 @@
     "iCheck": "latest",
     "jquery": "latest",
     "matchHeight": "latest",
+    "ngstorage": "~0.3.10",
     "noty": "~2.3.7",
     "select2": "latest"
   },

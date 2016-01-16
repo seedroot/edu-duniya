@@ -25,32 +25,36 @@
                         </div>
                     </div>
                     <div class="card-body">
-                    	<form>
+                    	<form ng-submit="vm.save()">
 	                    	<div class="row">
 		                    	<div class="col-lg-6">
 		                    		<div class="form-group">
-			                            <label for="exampleInputEmail1">Academic Year</label>
-			                            <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email">
+			                            <label>Academic Year</label>
+			                            <select ng-model="vm.academic_year" class="form-control">
+                                            <option ng-repeat="year in vm.aca_year" value="{{ year.year }}" selected="{{ year.is_current }}">{{ year.year }}</option>
+                                        </select>
 			                        </div>
 		                    	</div>
 		                    	<div class="col-lg-6">
 		                    		<div class="form-group">
-			                            <label for="exampleInputEmail1">Select Course</label>
-			                            <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email">
+			                            <label>Select Course</label>
+			                            <select ng-model="vm.course" class="form-control">
+                                            <option ng-repeat="course in vm.courses" value="{{ course.course_name }}">{{ course.course_name }}</option>
+                                        </select>
 			                        </div>
 		                    	</div>
 	                    	</div>
 	                    	<div class="row">
 		                    	<div class="col-lg-6">
 		                    		<div class="form-group">
-			                            <label for="exampleInputEmail1">Start Date</label>
-			                            <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email">
+			                            <label>Start Date</label>
+			                            <input type="text" class="form-control" id="start_date" ng-model="vm.start_date">
 			                        </div>
 		                    	</div>
 		                    	<div class="col-lg-6">
 		                    		<div class="form-group">
-			                            <label for="exampleInputEmail1">End Date</label>
-			                            <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email">
+			                            <label>End Date</label>
+			                            <input type="text" class="form-control" id="end_date" ng-model="vm.end_date">
 			                        </div>
 		                    	</div>
 	                    	</div>

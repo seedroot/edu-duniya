@@ -25,21 +25,21 @@
                         </div>
                     </div>
                     <div class="card-body">
-                        <form>
+                        <form ng-submit="vm.addBatch()">
                             <div class="row">
                                 <div class="col-lg-6">
                                     <div class="form-group">
-                                        <label for="exampleInputEmail1">Academic Year</label>
-                                        <select ng-model="vm.aca_year">
-                                            <option ng-repeat="year in vm.aca_year">{{ course.name }}</option>
+                                        <label>Academic Year</label>
+                                        <select ng-model="vm.academic_year" class="form-control">
+                                            <option ng-repeat="year in vm.aca_year" value="{{ year.year }}" selected="{{ year.is_current }}">{{ year.year }}</option>
                                         </select>
                                     </div>
                                 </div>
                                 <div class="col-lg-6">
                                     <div class="form-group">
-                                        <label for="exampleInputEmail1">Select Course</label>
-                                        <select ng-model="vm.course">
-                                            <option ng-repeat="course in vm.courses">{{ course.course_name }}</option>
+                                        <label>Select Course</label>
+                                        <select ng-model="vm.course" class="form-control">
+                                            <option ng-repeat="course in vm.courses" value="{{ course.course_name }}">{{ course.course_name }}</option>
                                         </select>
                                     </div>
                                 </div>
@@ -47,8 +47,8 @@
                             <div class="row">
                                 <div class="col-lg-6">
                                     <div class="form-group">
-                                        <label for="exampleInputEmail1">Batch Name</label>
-                                        <input type="email" class="form-control" id="exampleInputEmail1">
+                                        <label>Batch Name</label>
+                                        <input type="text" class="form-control" ng-model="vm.batch_name">
                                     </div>
                                 </div>
                                 <div class="col-lg-6">
@@ -79,24 +79,9 @@
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            <tr>
-                                                <td>B. Sc. I.T</td>
-                                                <td>F.Y B. Sc. I.T</td>
-                                                <td></td>
-                                            </tr>
-                                            <tr>
-                                                <td>B. Sc. I.T</td>
-                                                <td>S.Y B. Sc. I.T</td>
-                                                <td></td>
-                                            </tr>
-                                            <tr>
-                                                <td>B. Sc. I.T</td>
-                                                <td>T.Y B. Sc. I.T</td>
-                                                <td></td>
-                                            </tr>
-                                            <tr>
-                                                <td>B. Sc. CHEM</td>
-                                                <td>F.Y B. Sc. CHEM</td>
+                                            <tr ng-repeat="batch in vm.batches">
+                                                <td>{{ batch.course_name }}</td>
+                                                <td>{{ batch.name }}</td>
                                                 <td></td>
                                             </tr>
                                         </tbody>
