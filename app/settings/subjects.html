@@ -25,14 +25,13 @@
                         </div>
                     </div>
                     <div class="card-body">
-                        <div class="row" align="center">
-                            <div class="col-lg-12">
+                        <div class="row">
+                            <div class="col-lg-3">
                                 <div class="form-group">
-                                    <label for="batch_name" style="margin-right:15px">Select Batch</label>
-                                    <select name="batch_name">
-                                        <option>F.Y B.sc I.T</option>
-                                        <option>S.Y B.sc I.T</option>
-                                        <option>T.Y B.sc I.T</option>
+                                    <label>Select Batch</label>
+                                    <select name="batch_name" class="form-control" ng-model="vm.batch_id" ng-change="vm.getSubjects()">
+                                        <option selected="true">Select...</option>
+                                        <option ng-repeat="batch in vm.batches" value="{{ batch.uid }}">{{ batch.name }}</option>
                                     </select>
                                 </div>
                             </div>
@@ -41,7 +40,7 @@
                         <div class="row">
                             <div class="col-xs-12">
                                 <label class="pull-left">Compulsory Subjects</label>
-                                <a class="pull-right" href="#">+ more subjects</a>
+                                <a class="pull-right" data-toggle="modal" data-target="#CompSubjectModal">+ more subjects</a>
                             </div>
                         </div>
                         <div class="row">
@@ -56,19 +55,9 @@
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            <tr>
-                                                <td>SUB101</td>
-                                                <td>Maths</td>
-                                                <td></td>
-                                            </tr>
-                                            <tr>
-                                                <td>SUB102</td>
-                                                <td>English</td>
-                                                <td></td>
-                                            </tr>
-                                            <tr>
-                                                <td>SUB103</td>
-                                                <td>Science</td>
+                                            <tr ng-repeat="subject in vm.cSubjects">
+                                                <td>{{ subject.subject_code }}</td>
+                                                <td>{{ subject.subject_name }}</td>
                                                 <td></td>
                                             </tr>
                                         </tbody>
@@ -80,77 +69,120 @@
                         <div class="row">
                             <div class="col-xs-12">
                                 <label class="pull-left">Electives</label>
-                                <a class="pull-right" href="#">+ elective group</a>
+                                <a class="pull-right" data-toggle="modal" data-target="#ElecSubjectModal">+ elective group</a>
                             </div>
                         </div>
-                        <div class="row">
-                            <div class="col-xs-12">
-                                <label class="pull-left">Electives 1 Language</label>
-                                <a class="pull-right" href="#">+ subjects to elective</a>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-xs-12">
-                                <div class="table-responsive">
-                                    <table class="table table-hover">
-                                        <thead>
-                                            <tr>
-                                                <th>Subject Code</th>
-                                                <th>Subject Name</th>
-                                                <th></th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <tr>
-                                                <td>SUB401</td>
-                                                <td>German</td>
-                                                <td></td>
-                                            </tr>
-                                            <tr>
-                                                <td>SUB402</td>
-                                                <td>Spanish</td>
-                                                <td></td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
+                        <div ng-repeat="elective in vm.electives">
+                            <div class="row">
+                                <div class="col-xs-12">
+                                    <label class="pull-left">Elective {{ $index + 1 }} {{ elective.elective_name }}</label>
+                                    <a class="pull-right" href="#">+ subjects to elective</a>
                                 </div>
                             </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-xs-12">
-                                <label class="pull-left">Electives 1 Language</label>
-                                <a class="pull-right" href="#">+ subjects to elective</a>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-xs-12">
-                                <div class="table-responsive">
-                                    <table class="table table-hover">
-                                        <thead>
-                                            <tr>
-                                                <th>Subject Code</th>
-                                                <th>Subject Name</th>
-                                                <th></th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <tr>
-                                                <td>SUB401</td>
-                                                <td>German</td>
-                                                <td></td>
-                                            </tr>
-                                            <tr>
-                                                <td>SUB402</td>
-                                                <td>Spanish</td>
-                                                <td></td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
+                            <div class="row">
+                                <div class="col-xs-12">
+                                    <div class="table-responsive">
+                                        <table class="table table-hover">
+                                            <thead>
+                                                <tr>
+                                                    <th>Subject Code</th>
+                                                    <th>Subject Name</th>
+                                                    <th></th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr ng-repeat="subject in elective.subjects">
+                                                    <td>{{ subject.subject_code }}</td>
+                                                    <td>{{ subject.subject_name }}</td>
+                                                    <td></td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="CompSubjectModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel">Compulsory Subject: {{ vm.cSubjectName }}</h4>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div class="form-group">
+                            <label>Subject Name</label>
+                            <input type="text" class="form-control" ng-model="vm.cSubjectName">
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="form-group">
+                            <label>Subject Code</label>
+                            <input type="text" class="form-control" ng-model="vm.cSubjectCode">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary" ng-click="vm.addSubject('compulsory')" data-dismiss="modal">Add Subject</button>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="ElecSubjectModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel">Add Elective</h4>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="form-group">
+                            <label>Elective Name</label>
+                            <input type="text" class="form-control" ng-model="vm.electiveName">
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="table-responsive">
+                            <table class="table table-bordered">
+                                <thead>
+                                    <th>Subject Name</th>
+                                    <th>Subject Code</th>
+                                    <th></th>
+                                </thead>
+                                <tbody>
+                                    <tr ng-repeat="subject in vm.newElectSubjects">
+                                        <td><input type="text" class="form-control" ng-model="subject.subject_name"></td>
+                                        <td><input type="text" class="form-control" ng-model="subject.subject_code"></td>
+                                        <td>X</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-12">
+                        <a ng-click="vm.addMoreElectSubjects()">add subject</a>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary" ng-click="vm.addSubject('elective')" data-dismiss="modal">Add Elective</button>
             </div>
         </div>
     </div>

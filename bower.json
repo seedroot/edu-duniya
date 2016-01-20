@@ -9,10 +9,12 @@
     "bootstrap-switch": "latest",
     "Chart.js": "latest",
     "datatables": "latest",
+    "eonasdan-bootstrap-datetimepicker": "~4.17.37",
     "font-awesome": "latest",
     "iCheck": "latest",
     "jquery": "latest",
     "matchHeight": "latest",
+    "ngstorage": "~0.3.10",
     "noty": "~2.3.7",
     "select2": "latest"
   },

@@ -2,7 +2,7 @@
 	'use strict'
 
 	angular
-		.module('edu', ['ui.router', 'cgNotify'])
+		.module('edu', ['ui.router', 'cgNotify', 'ngStorage'])
 		.config(appConfig)
 
 	getInstitutes.$inject = ['adminService'];
@@ -15,9 +15,42 @@
 		return settingsService.getCourses($stateParams.id);
 	}
 
+	getBatches.$inject = ['settingsService', '$stateParams'];
+	function getBatches (settingsService, $stateParams) {
+		return settingsService.getBatches($stateParams.id);
+	}
+
+	getAdmissions.$inject = ['settingsService', '$stateParams'];
+	function getAdmissions (settingsService, $stateParams) {
+		return settingsService.getAdmissions($stateParams.id)
+	}
+
 	appConfig.$inject = ['$stateProvider', '$urlRouterProvider'];
 	function appConfig ($stateProvider, $urlRouterProvider) {
 		$stateProvider
+			.state('blank', {
+				url: '/student',
+				views: {
+					"main": {
+						template: ''
+					},
+					"header": {
+						templateUrl: 'app/layouts/header.html',
+						controller: 'headerController',
+						controllerAs: 'vm'
+					},
+					"menu": {
+						templateUrl: 'app/layouts/side-menu.html',
+						controller: 'menuController',
+						controllerAs: 'vm'
+					},
+					"footer": {
+						templateUrl: 'app/layouts/footer.html',
+						controller: 'footerController',
+						controllerAs: 'vm'
+					}
+				}
+			})
 			.state('main', {
 				url: '/home',
 				views: {
@@ -34,6 +67,16 @@
 					"main": {
 						templateUrl: 'app/subdomain/sub-domain.html',
 						controller: 'SubdomainController',
+						controllerAs: 'vm'
+					}
+				}
+			})
+			.state('find', {
+				url: '/find',
+				views: {
+					"main": {
+						templateUrl: 'app/admin/institutes.html',
+						controller: 'FindInstitutesController',
 						controllerAs: 'vm'
 					}
 				}
@@ -184,6 +227,10 @@
 						controller: 'footerController',
 						controllerAs: 'vm'
 					}
+				},
+				resolve: {
+					courses: getCourses,
+					admissions: getAdmissions
 				}
 			})
 			.state('general', {
@@ -262,6 +309,10 @@
 						controller: 'footerController',
 						controllerAs: 'vm'
 					}
+				},
+				resolve: {
+					courses: getCourses,
+					batches: getBatches
 				}
 			})
 			.state('subjects', {
@@ -287,6 +338,9 @@
 						controller: 'footerController',
 						controllerAs: 'vm'
 					}
+				},
+				resolve: {
+					batches: getBatches
 				}
 			})
 	}

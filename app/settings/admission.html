@@ -25,32 +25,36 @@
                         </div>
                     </div>
                     <div class="card-body">
-                    	<form>
+                    	<form ng-submit="vm.save()">
 	                    	<div class="row">
 		                    	<div class="col-lg-6">
 		                    		<div class="form-group">
-			                            <label for="exampleInputEmail1">Academic Year</label>
-			                            <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email">
+			                            <label>Academic Year</label>
+			                            <select ng-model="vm.academic_year" class="form-control">
+                                            <option ng-repeat="year in vm.aca_year" value="{{ year.year }}" selected="{{ year.is_current }}">{{ year.year }}</option>
+                                        </select>
 			                        </div>
 		                    	</div>
 		                    	<div class="col-lg-6">
 		                    		<div class="form-group">
-			                            <label for="exampleInputEmail1">Select Course</label>
-			                            <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email">
+			                            <label>Select Course</label>
+			                            <select ng-model="vm.course" class="form-control">
+                                            <option ng-repeat="course in vm.courses" value="{{ course.course_name }}">{{ course.course_name }}</option>
+                                        </select>
 			                        </div>
 		                    	</div>
 	                    	</div>
 	                    	<div class="row">
 		                    	<div class="col-lg-6">
 		                    		<div class="form-group">
-			                            <label for="exampleInputEmail1">Start Date</label>
-			                            <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email">
+			                            <label>Start Date</label>
+			                            <input type="text" class="form-control" id="start_date" placeholder="DD/MM/YYYY" ng-model="vm.start_date">
 			                        </div>
 		                    	</div>
 		                    	<div class="col-lg-6">
 		                    		<div class="form-group">
-			                            <label for="exampleInputEmail1">End Date</label>
-			                            <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email">
+			                            <label>End Date</label>
+			                            <input type="text" class="form-control" id="end_date" placeholder="DD/MM/YYYY" ng-model="vm.end_date">
 			                        </div>
 		                    	</div>
 	                    	</div>
@@ -70,28 +74,10 @@
 		                    				</tr>
 	                    				</thead>
 	                    				<tbody>
-		                    				<tr>
-		                    					<td>B. Sc. I.T</td>
-		                    					<td>1st Jun 2016</td>
-		                    					<td>8th Jun 2016</td>
-		                    					<td></td>
-		                    				</tr>
-		                    				<tr>
-		                    					<td>B. Sc. C.S</td>
-		                    					<td>2nd Jun 2016</td>
-		                    					<td>9th Jun 2016</td>
-		                    					<td></td>
-		                    				</tr>
-		                    				<tr>
-		                    					<td>B. Sc. PHY</td>
-		                    					<td>3rd Jun 2016</td>
-		                    					<td>10th Jun 2016</td>
-		                    					<td></td>
-		                    				</tr>
-		                    				<tr>
-		                    					<td>B. Sc. CHEM</td>
-		                    					<td>4th Jun 2016</td>
-		                    					<td>11th Jun 2016</td>
+		                    				<tr ng-repeat="admission in vm.admissions">
+		                    					<td>{{ admission.course_name }}</td>
+		                    					<td>{{ admission.start_date }}</td>
+		                    					<td>{{ admission.end_date }}</td>
 		                    					<td></td>
 		                    				</tr>
 	                    				</tbody>
@@ -110,32 +96,48 @@
                         </div>
                     </div>
                     <div class="card-body">
-                    	<form>
+                    	<form ng-submit="vm.addField()">
+                    		<!-- <div class="row">
+                    			<div class="col-lg-12">
+		                    		<div class="form-group">
+			                            <label>Select Course</label>
+			                            <select ng-model="vm.course" class="form-control">
+                                            <option ng-repeat="course in vm.courses" value="{{ course.course_name }}">{{ course.course_name }}</option>
+                                        </select>
+			                        </div>
+		                    	</div>
+                    		</div> -->
 	                    	<div class="row">
 		                    	<div class="col-lg-6">
 		                    		<div class="form-group">
-			                            <label for="exampleInputEmail1">Field Name</label>
-			                            <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email">
+			                            <label>Field Name</label>
+			                            <input type="text" class="form-control" ng-model="vm.field_name">
 			                        </div>
 		                    	</div>
 		                    	<div class="col-lg-6">
 		                    		<div class="form-group">
-			                            <label for="exampleInputEmail1">Select Status</label>
-			                            <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email">
+			                            <label>Select Status</label>
+			                            <select ng-model="vm.status" class="form-control">
+			                            	<option value="true">Enabled</option>
+			                            	<option value="false">Disabled</option>
+			                            </select>
 			                        </div>
 		                    	</div>
 	                    	</div>
 	                    	<div class="row">
 		                    	<div class="col-lg-6">
 		                    		<div class="form-group">
-			                            <label for="exampleInputEmail1">Input Type</label>
-			                            <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email">
+			                            <label>Input Type</label>
+			                            <select ng-model="vm.input_type" class="form-control">
+			                            	<option>Text Box</option>
+			                            	<option>Dropdown</option>
+			                            </select>
 			                        </div>
 		                    	</div>
 		                    	<div class="col-lg-6">
 			                    	<div class="checkbox" style="padding-top:14px; padding-left:10px">
 	                                    <label>
-	                                        <input type="checkbox" class="input-checkbox" value=""> Is Mandatory
+	                                        <input type="checkbox" class="input-checkbox" ng-model="vm.is_mandatory" value=""> Is Mandatory
 	                                    </label>
 									</div>
 		                    	</div>
@@ -157,32 +159,11 @@
 		                    				</tr>
 	                    				</thead>
 	                    				<tbody>
-		                    				<tr>
-		                    					<td>Full Name</td>
-		                    					<td>Active</td>
-		                    					<td>Text Box</td>
-		                    					<td>Yes</td>
-		                    					<td></td>
-		                    				</tr>
-		                    				<tr>
-		                    					<td>Occupation</td>
-		                    					<td>Active</td>
-		                    					<td>Selection</td>
-		                    					<td>No</td>
-		                    					<td></td>
-		                    				</tr>
-		                    				<tr>
-		                    					<td>Date Of Birth</td>
-		                    					<td>Inactive</td>
-		                    					<td>Text Box</td>
-		                    					<td>Yes</td>
-		                    					<td></td>
-		                    				</tr>
-		                    				<tr>
-		                    					<td>Caste</td>
-		                    					<td>Active</td>
-		                    					<td>Text Box</td>
-		                    					<td>No</td>
+		                    				<tr ng-repeat="field in vm.fields">
+		                    					<td>{{ field.name }}</td>
+		                    					<td>{{ field.status }}</td>
+		                    					<td>{{ field.input_type }}</td>
+		                    					<td>{{ field.is_mandatory }}</td>
 		                    					<td></td>
 		                    				</tr>
 	                    				</tbody>
