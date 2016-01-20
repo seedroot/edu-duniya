@@ -146,5 +146,20 @@
 
 			return deferred.promise;
 		}
+
+		this.addField = function (id, _field) {
+			var deferred = $q.defer();
+
+			//abcd is admission_id which is hardcoded in api server, for now
+			$http.post(config.apiUrl + '/admission/' + id + '/abcd', { field: _field })
+				.success(function (data) {
+					deferred.resolve(data);
+				})
+				.error(function (err) {
+					deferred.reject(err);
+				})
+
+			return deferred.promise;
+		}
 	}
 })();
