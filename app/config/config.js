@@ -2,7 +2,7 @@
 	'use strict'
 
 	var config = {
-		apiUrl: 'http://localhost:3000/api', //insert api base url here
+		apiUrl: 'http://ec2-54-88-231-184.compute-1.amazonaws.com:3000/api', //insert api base url here
 		hostname: '' // this will be inserted from run module
 	}
 
