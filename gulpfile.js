@@ -52,4 +52,4 @@ gulp.task('server', function () {
 
 gulp.task('default', ['cache', 'server', 'inject']);
 
-gulp.watch('app/**/*.html', ['cache']);
+gulp.watch('app/**/*.html', ['cache'])
