@@ -101,6 +101,56 @@
 					}
 				}
 			})
+			.state('studentdetail', {
+				url: '/studentdetail',
+				views: {
+					"main": {
+						templateUrl: 'app/admission/studentdetail.html',
+						controller: 'StudentdetailController',
+						controllerAs: 'vm'
+					},
+					"header": {
+						templateUrl: 'app/layouts/header.html',
+						controller: 'headerController',
+						controllerAs: 'vm'
+					},
+					"menu": {
+						templateUrl: 'app/layouts/side-menu.html',
+						controller: 'menuController',
+						controllerAs: 'vm'
+					},
+					"footer": {
+						templateUrl: 'app/layouts/footer.html',
+						controller: 'footerController',
+						controllerAs: 'vm'
+					}
+				}
+			})
+			.state('employeedetail',{
+				url:'/employeedetail',
+				views: {
+					"main": {
+						templateUrl: 'app/admission/employeedetail.html',
+						controller: 'EmployeedetailController',
+						controllerAs: 'vm'
+					},
+					"header": {
+						templateUrl: 'app/layouts/header.html',
+						controller: 'headerController',
+						controllerAs: 'vm'
+					},
+					"menu": {
+						templateUrl: 'app/layouts/side-menu.html',
+						controller: 'menuController',
+						controllerAs: 'vm'
+					},
+					"footer": {
+						templateUrl: 'app/layouts/footer.html',
+						controller: 'footerController',
+						controllerAs: 'vm'
+					}
+				}
+			})
 			.state('approval', {
 				url: '/approval',
 				views: {
