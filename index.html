@@ -21,8 +21,8 @@
     <!-- <link rel="stylesheet" type="text/css" href="../css/style.css">
     <link rel="stylesheet" type="text/css" href="../css/themes.css"> -->
     <!-- inject:css -->
-    <link rel="stylesheet" href="/css/checkbox.css">
     <link rel="stylesheet" href="/css/MetroJs.ltt.css">
+    <link rel="stylesheet" href="/css/checkbox.css">
     <link rel="stylesheet" href="/css/style.css">
     <link rel="stylesheet" href="/css/themes.css">
     <!-- endinject -->
@@ -51,6 +51,8 @@
             <script type="text/javascript" src="../bower_components/DataTables/media/js/dataTables.bootstrap.min.js"></script>
             <script type="text/javascript" src="../bower_components/select2/dist/js/select2.full.min.js"></script>
             <script type="text/javascript" src="../bower_components/angular-notify/dist/angular-notify.min.js"></script>
+            <script type="text/javascript" src="../bower_components/ngstorage/ngStorage.min.js"></script>
+            <script type="text/javascript" src="../bower_components/ng-file-upload/ng-file-upload.min.js"></script>
             
             <script src="http://maps.google.com/maps/api/js"></script>
             <script src="/lib/gmaps.js"></script>
@@ -59,18 +61,19 @@
             <script type="text/javascript" src="../lib/index.js"></script> -->
             <!-- inject:js -->
             <script src="/app/core.module.js"></script>
-            <script src="/app/admin/approval.controller.js"></script>
             <script src="/app/admission/employeedetail.controller.js"></script>
             <script src="/app/admission/studentdetail.controller.js"></script>
+            <script src="/app/admin/approval.controller.js"></script>
+            <script src="/app/admin/institutes.controller.js"></script>
             <script src="/app/authentication/login.controller.js"></script>
             <script src="/app/authentication/register.controller.js"></script>
             <script src="/app/config/config.js"></script>
             <script src="/app/config/templates.js"></script>
             <script src="/app/core/common.js"></script>
+            <script src="/app/eduduniya/edu-duniya.controller.js"></script>
             <script src="/app/data/admin.service.js"></script>
             <script src="/app/data/authentication.service.js"></script>
             <script src="/app/data/settings.data.js"></script>
-            <script src="/app/eduduniya/edu-duniya.controller.js"></script>
             <script src="/app/layouts/footer.controller.js"></script>
             <script src="/app/layouts/header.controller.js"></script>
             <script src="/app/layouts/side-menu.controller.js"></script>
@@ -81,8 +84,11 @@
             <script src="/app/settings/settings.controller.js"></script>
             <script src="/app/settings/subjects.controller.js"></script>
             <script src="/app/subdomain/sub-domain.controller.js"></script>
-            <script src="/lib/app.js"></script>
+            <script src="/app/widgets/datetimepicker.directive.js"></script>
+            <script src="/app/widgets/fileUpload.directive.js"></script>
             <script src="/lib/MetroJs.ltt.min.js"></script>
+            <script src="/lib/app.js"></script>
+            <script src="/lib/gmaps.js"></script>
             <!-- endinject -->
 </body>
 

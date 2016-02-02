@@ -2,7 +2,7 @@
 	'use strict'
 
 	angular
-		.module('edu', ['ui.router', 'cgNotify', 'ngStorage'])
+		.module('edu', ['ui.router', 'cgNotify', 'ngStorage', 'ngFileUpload'])
 		.config(appConfig)
 
 	getInstitutes.$inject = ['adminService'];
@@ -23,6 +23,11 @@
 	getAdmissions.$inject = ['settingsService', '$stateParams'];
 	function getAdmissions (settingsService, $stateParams) {
 		return settingsService.getAdmissions($stateParams.id)
+	}
+
+	getSettings.$inject = ['settingsService', '$stateParams'];
+	function getSettings (settingsService, $stateParams) {
+		return settingsService.getGeneralSettings($stateParams.id);
 	}
 
 	appConfig.$inject = ['$stateProvider', '$urlRouterProvider'];
@@ -101,12 +106,12 @@
 					}
 				}
 			})
-			.state('studentdetail', {
-				url: '/studentdetail',
+			.state('student', {
+				url: '/settings/:id/student',
 				views: {
 					"main": {
 						templateUrl: 'app/admission/studentdetail.html',
-						controller: 'StudentdetailController',
+						controller: 'AddStudentController',
 						controllerAs: 'vm'
 					},
 					"header": {
@@ -126,12 +131,12 @@
 					}
 				}
 			})
-			.state('employeedetail',{
-				url:'/employeedetail',
+			.state('employee',{
+				url:'/settings/:id/employee',
 				views: {
 					"main": {
 						templateUrl: 'app/admission/employeedetail.html',
-						controller: 'EmployeedetailController',
+						controller: 'AddEmployeeController',
 						controllerAs: 'vm'
 					},
 					"header": {
@@ -256,6 +261,9 @@
 						controller: 'footerController',
 						controllerAs: 'vm'
 					}
+				},
+				resolve: {
+					settings: getSettings
 				}
 			})
 			.state('course', {

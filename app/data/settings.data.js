@@ -161,5 +161,73 @@
 
 			return deferred.promise;
 		}
+
+		this.addAcademicYear = function (id, academic_year) {
+			var deferred = $q.defer();
+
+			$http.post(config.apiUrl + '/settings/' + id + '/general/academic_year', { academic_year: academic_year })
+				.success(function (data) {
+					deferred.resolve(data);
+				})
+				.error(function (err) {
+					deferred.reject(err);
+				})
+
+			return deferred.promise;
+		}
+
+		this.updateAcademicYear = function (id, academic_year) {
+			var deferred = $q.defer();
+
+			$http.put(config.apiUrl + '/settings/' + id + '/general/academic_year', { academic_year: academic_year })
+				.success(function (data) {
+					deferred.resolve(data);
+				})
+				.error(function (err) {
+					deferred.reject(err);
+				})
+
+			return deferred.promise;
+		}
+
+		this.removeAcademicYear = function (id, year_id) {
+			var deferred = $q.defer();
+			console.log(year_id);
+			$http.delete(config.apiUrl + '/settings/' + id + '/general/academic_year', { params: { year: year_id } })
+				.success(function (data) {
+					deferred.resolve(data);
+				})
+				.error(function (err) {
+					deferred.reject(err);
+				})
+
+			return deferred.promise;
+		}
+
+		this.getGeneralSettings = function (id) {
+			var deferred = $q.defer();
+			$http.get(config.apiUrl + '/settings/' + id + '/general')
+				.success(function (data) {
+					deferred.resolve(data);
+				})
+				.error(function (err) {
+					deferred.reject(err);
+				})
+
+			return deferred.promise;
+		}
+
+		this.updateGeneralSettings = function (id, settings, type) {
+			var deferred = $q.defer();
+			$http.put(config.apiUrl + '/settings/' + id + '/general', { settings: settings, type: type })
+				.success(function (data) {
+					deferred.resolve(data);
+				})
+				.error(function (err) {
+					deferred.reject(err);
+				})
+
+			return deferred.promise;
+		}
 	}
 })();

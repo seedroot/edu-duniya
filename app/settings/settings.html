@@ -40,21 +40,21 @@
         <div class="row no-gap">
             <div class="col-xs-12 col-md-1 col-md-offset-3" style="margin-bottom: 0;">
                 <div class="tiles blue">
-            <div class="live-tile half-tall" data-play-onhover="true" data-start-now="false" data-speed="750" data-delay="3000" data-initdelay="4000">
-                <span class="tile-title">student category</span>
+            <div class="live-tile half-tall" data-play-onhover="true" data-start-now="false" data-speed="750" data-delay="3000" data-initdelay="4000" ui-sref="employee({id: vm.institute_id})">
+                <span class="tile-title">add employee</span>
                 <div><i class="full fa fa-sort-alpha-asc fa-2x text-center" style="margin-top:13%"></i></div>
-                <div class="full">add/remove student category and caste</div>
+                <div class="full">add/edit employees</div>
             </div>
-                <div class="live-tile half-tall" data-play-onhover="true" data-start-now="false" data-speed="750" data-delay="3000" data-initdelay="4000">
-                <span class="tile-title">roll numbers</span>
+                <div class="live-tile half-tall" data-play-onhover="true" data-start-now="false" data-speed="750" data-delay="3000" data-initdelay="4000" ui-sref="student({id: vm.institute_id})">
+                <span class="tile-title">add student</span>
                 <div><i class="full fa fa-sort-numeric-asc fa-2x text-center" style="margin-top:13%"></i></div>
-                <div class="full">manage students roll number from here</div>
+                <div class="full">add/edit student</div>
             </div>
         </div>
             </div>
             <div class="col-xs-12 col-md-3" style="margin-bottom: 0;">
                     <div class="tiles blue">
-            <div class="live-tile" data-play-onhover="true" data-start-now="false" data-speed="750" data-delay="3000" data-initdelay="3500">
+            <div class="live-tile" data-play-onhover="true" data-start-now="false" data-speed="750" data-delay="3000" data-initdelay="3500" ui-sref="general({id: vm.institute_id})">
                 <span class="tile-title">public page customization</span>
                 <div><i class="full fa fa-globe fa-5x text-center" style="margin-top:13%"></i></div>
                 <div class="full">customize you own subdomain with sliders, logo, add/update/delete menu tabs</div>

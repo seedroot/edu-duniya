@@ -13,19 +13,26 @@
                                 <div class="panel-heading">Academic Year</div>
                                 <div class="panel-body">
                                     <div class="row">
-                                        <div class="col-lg-5 col-md-5">
-                                            Form Date:
-                                                   <select></select>
+                                        <div class="col-lg-5">
+                                            <div class="form-group">
+                                                <label>From Date</label>
+                                                <select class="form-control" ng-model="vm.academic_year.from_date">
+                                                    <option value="Select">Select...</option>
+                                                    <option value="{{ year }}" ng-repeat="year in vm.year">{{ year }}</option>
+                                                </select>
+                                            </div>
                                         </div>
-                                        <div class="col-lg-5 col-md-5">
-                                            To Date:
-                                                   <select></select>
+                                        <div class="col-lg-5">
+                                            <div class="form-group">
+                                                <label>To Date</label>
+                                                <select class="form-control" ng-model="vm.academic_year.to_date">
+                                                    <option value="Select">Select...</option>
+                                                    <option ng-repeat="year in vm.year" value="{{ year }}">{{ year }}</option>
+                                                </select>
+                                            </div>
                                         </div>
-                                        <div class="col-lg-2">
-                                            <!-- <input type="button" value="Add Year" class="btn btn-success"> -->
-                                            <a class="pull-left" href="#">
-                                                <h5><u>+Add Year</u></h5>
-                                            </a>
+                                        <div class="col-lg-2" style="margin-top:13px">
+                                            <input type="button" class="btn btn-primary btn-block" ng-click="vm.save('academic_year')" value="Save">
                                         </div>
                                     </div>
                                     <div class="row">
@@ -36,14 +43,17 @@
                                                         <th>Sr No.</th>
                                                         <th>Academic Year</th>
                                                         <th>Current</th>
+                                                        <th>Remove</th>
                                                     </tr>
                                                 </thead>
                                                 <tbody>
-                                                    <tr ng-repeat="val in vm.arr">
-                                                        <td>{{ val.sr_no }}</td>
-                                                        <td>{{ val.aca_year }}</td>
+                                                    <tr ng-repeat="val in vm.acaYear">
+                                                        <td>{{ $index + 1 }}</td>
+                                                        <td>{{ val.year }}</td>
                                                         <td>
-                                                            <input type="checkbox" ng-model="val.is_current" /></td>
+                                                            <input type="checkbox" ng-model="val.is_current" ng-change="vm.isCurrentCheck($index)" />
+                                                        </td>
+                                                        <td ng-click="vm.removeAcademicYear($index)">X</td>
                                                     </tr>
                                                 </tbody>
                                             </table>
@@ -65,20 +75,18 @@
                                     <!-- Logo -->
                                     <div class="row">
                                         <div class="col-lg-12">
-                                            <h4 class="pull-left">Upload Logo</h4>
+                                            <h4 class="pull-left">Upload Logo <small>(100x100)</small></h4>
                                         </div>
                                     </div>
                                     <div class="row">
-                                        <div class="col-lg-12 col-md-12">
-                                            <div class="inline">
-                                                <div class="">
-                                                    <img src="../../img/profile/profile-1.jpg" class="img-responsive" style="max-height: 100px; max-width: 100px" />
-                                                </div>
-                                                <!-- <label>Upload Logo</label>-->
-                                                <div class="caption">
-                                                    <input type="file" accept="image/*">
-                                                </div>
-                                            </div>
+                                        <div class="col-lg-2">
+                                            <img ng-src="{{ vm.logo }}" id="img_logo" class="img-responsive" style="max-height: 100px; max-width: 100px" />
+                                        </div>
+                                        <div class="col-lg-8" style="padding-top: 82px;">
+                                            <input type="file" accept="image/*" id="uploadLogo">
+                                        </div>
+                                        <div class="col-lg-2" style="padding-top: 56px; padding-left: 0px">
+                                            <input type="button" value="Upload Logo" class="btn btn-primary" ng-click="vm.updateLogo()">
                                         </div>
                                     </div>
                                     <!-- Slider Image -->
@@ -92,13 +100,20 @@
                                         <div class="col-lg-12 col-md-12">
                                             <div class="fresh-color panel-primary">
                                                 <div class="panel-body">
-                                                    <div class="Document-list">
-                                                        <ul class="list-inline">
-                                                            <li class="DocumentItem" class="DocumentItem" ng-repeat="media in vm.mediaList">
-                                                                <img ng-src="{{media.imagePath}}" class="img-responsive" style="max-width: 100px; max-height: 100px" />
-                                                            </li>
-                                                        </ul>
-                                                    </div>
+                                                    <ul class="list-inline" class="row">
+                                                        <li class="col-lg-3">
+                                                            <div file-upload  number='1' image='vm.settings.slider_1'></div>
+                                                        </li>
+                                                        <li class="col-lg-3">
+                                                            <div file-upload number='2' image='vm.settings.slider_2'></div>
+                                                        </li>
+                                                        <li class="col-lg-3">
+                                                            <div file-upload number='3' image='vm.settings.slider_3'></div>
+                                                        </li>
+                                                        <li class="col-lg-3">
+                                                            <div file-upload number='4' image='vm.settings.slider_4'></div>
+                                                        </li>
+                                                    </ul>
                                                 </div>
                                             </div>
                                         </div>
@@ -167,7 +182,63 @@
             </div>        
     </div>
 </div>
+<style type="text/css">
+    .demo-2 {
+  position: relative;
+  width: 300px;
+  height: 200px;
+  overflow: hidden;
+  float: left;
+  margin-right: 20px;
+  background-color: rgba(26, 76, 110, 0.5)
+}
 
+.demo-2 p,
+.demo-2 h2 {
+  color: #fff;
+  padding: 10px;
+  left: -20px;
+  top: 20px;
+  position: relative
+}
 
+.demo-2 p {
+  font-family: 'Lato';
+  font-size: 12px;
+  line-height: 18px;
+  margin: 0
+}
+
+.demo-2 h2 {
+  font-size: 20px;
+  line-height: 24px;
+  margin: 0;
+  font-family: 'Lato'
+}
+
+.effect img {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  cursor: pointer;
+  margin: -12px 0;
+  -webkit-transition: bottom .3s ease-in-out;
+  -moz-transition: bottom .3s ease-in-out;
+  -o-transition: bottom .3s ease-in-out;
+  transition: bottom .3s ease-in-out
+}
+
+.effect img.top:hover {
+  bottom: -96px;
+  padding-top: 100px
+}
+
+h2.zero,
+p.zero {
+  margin: 0;
+  padding: 0
+}
+
+</style>
 
 

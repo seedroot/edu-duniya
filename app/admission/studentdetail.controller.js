@@ -3,10 +3,10 @@
 
 	angular
 		.module('edu')
-		.controller('StudentdetailController', StudentdetailController)
+		.controller('AddStudentController', AddStudentController)
 
-	StudentdetailController.$inject =[];
-	function StudentdetailController () {
-		
+	AddStudentController.$inject =[];
+	function AddStudentController () {
+		var vm = this;
 	}
 })();
