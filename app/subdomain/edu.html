@@ -1,6 +1,18 @@
-<div class="flat-blue landing-page">
-    <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2 logo-span"><img class="img-responsive logo" ng-src="{{ vm.domain.logo }}" style="height:100px; width:100px"></div>
-    <div class="name"><bold class="brand">{{ vm.institute.institute_name }} , </bold><small class="address-bar">{{ vm.institute.city }} - {{ vm.institute.pincode }}</small></div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="shortcut icon" href="icon.ico"/>
+    <title>Edu-duniya</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta charset="utf-8">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <link href="css/edu.css" rel="stylesheet">
+</head>
+<body class="body-style">
+    <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2 logo-span"><img class="img-responsive logo" src="img/logo.png"></div>
+    <div class="name"><bold class="brand">School Name , </bold><small class="address-bar">City - Pincode</small></div>
     <nav class="navbar navbar-default" role="navigation">
         <div>
             <div class="navbar-header">
@@ -38,21 +50,35 @@
             <div class="col-lg-12 text-center">
                 <div id="carousel-example-generic" class="carousel slide slider">
                     <ol class="carousel-indicators hidden-xs">
-                        <li data-target="#carousel-example-generic" ng-class="{active: img.active}" ng-repeat="img in vm.slider" data-slide-to="{{ $index }}"></li>
+                        <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+                        <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+                        <li data-target="#carousel-example-generic" data-slide-to="2"></li>
                     </ol>
                     <div class="carousel-inner">
-                        <div class="item" ng-class="{active: img.active}" ng-repeat="img in vm.slider" >
-                            <img class="img-responsive img-full" ng-src="{{ img.slider }}" alt="">
+                        <div class="item active">
+                            <img class="img-responsive img-full" src="img/slide-1.jpg" alt="">
+                        </div>
+                        <div class="item">
+                            <img class="img-responsive img-full" src="img/slide-2.jpg" alt="">
+                        </div>
+                        <div class="item">
+                            <img class="img-responsive img-full" src="img/slide-3.jpg" alt="">
                         </div>
                     </div>
+                    <a class="left carousel-control" href="#carousel-example-generic" data-slide="prev">
+                        <span class="icon-prev"></span>
+                    </a>
+                    <a class="right carousel-control" href="#carousel-example-generic" data-slide="next">
+                        <span class="icon-next"></span>
+                    </a>
                 </div>
                 <div class="col-lg-12 news-section">
                     <div class="col-lg-2 news-head">News & Notices</div>
                     <div class="col-lg-10 news">
                       <ul class="news-ul">
-                        <li class="spn">1. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi</li>
-                        <li><div class="spn">2. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi</div></li>
-                        <li><div class="spn">3. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi</div></li>
+                        <li><div class="spn">Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi</div></li>
+                        <li><div class="spn">Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi</div></li>
+                        <li><div class="spn">Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi</div></li>
                       </ul>
                     </div>
                 </div>
@@ -99,14 +125,28 @@
             </div>
         </div>
     </div>
-</div>
+
+    <script src="js/jquery.js"></script>
+    <script src="js/bootstrap.min.js"></script>
     <script>
-    
+    $('.carousel').carousel({
+        interval: 3000})
+    $(function() {
+        $('.news').vTicker();});
+    function hoverTiles(){
+        var tiles = $('.tile');
+        tiles.hover(function(){
+            tiles.removeClass('active');
+            $(this).addClass('active');})}
     $(document).ready(function() {
         hoverTiles();
 
         $('.tile').on('mouseleave', function () {
             $('.tile').removeClass('active');
-        });
+        })
     });
+    $(window).on('resize', function(e) {});
     </script>
+</body>
+
+</html>

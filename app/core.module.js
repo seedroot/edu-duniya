@@ -30,6 +30,11 @@
 		return settingsService.getGeneralSettings($stateParams.id);
 	}
 
+	getDomain.$inject = ['DomainSettings'];
+	function getDomain (DomainSettings){
+		return DomainSettings.getDomain();
+	}
+
 	appConfig.$inject = ['$stateProvider', '$urlRouterProvider'];
 	function appConfig ($stateProvider, $urlRouterProvider) {
 		$stateProvider
@@ -74,6 +79,9 @@
 						controller: 'SubdomainController',
 						controllerAs: 'vm'
 					}
+				},
+				resolve: {
+					domain: getDomain
 				}
 			})
 			.state('find', {
